@@ -1,1 +1,1 @@
-console.log('webpack-dev')
+console.log('webpack-devffff')
