@@ -180,6 +180,8 @@ yarn add html-webpack-plugin@4.5.2 -D
 
 看来还是多学多练啊！!(渣渣的心路历程谁能懂...............)
 
+------   
+
 > 2021-8-18 继续学习，距离上次学习隔了三天了！！！！ （强烈谴责自己）
 
 ( gzip压缩 ) 新东西 补充
@@ -206,6 +208,9 @@ yarn add html-webpack-plugin@4.5.2 -D
 
 增加哈希戳   
 
+` filename:'bundle.[hash:8]js',`
+
+
 ```html
 <!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title></head><body><!-- 模板 --><script src=bundle.js?45ceeff0e9768c4b4352></script></body></html>
 ```
@@ -217,9 +222,9 @@ yarn add html-webpack-plugin@4.5.2 -D
 再次安装模块的低版本
 yarn add css-loader@2.1.0  style-loader@0.23.1 -D
 
-```
+```JavaScript
    module: {  // 模块
-        rules: [ // 规则  css-loader 负责解析 @import 这种语法的
+        rules: [
             {
                 // test: /\.css$/, 
                 test: /\.less$/, 
@@ -238,18 +243,19 @@ yarn add css-loader@2.1.0  style-loader@0.23.1 -D
     },
 ```
 
->  loader
-            // css-loader 负责解析 @import 这种语法的
-             // style-loader 负责把 css 插入到head 的标签中
-            // loader 的特点 希望单一
-          // loader 的用法 字符串只用一个 loader
-            // 多个loader 需要 []
-            // loader 的顺序 默认是从左向右执行 自下而上
-            // loader 还可以写成  对象的方式   (可以多放点东西，options)
-            // 处理less 文件  sass scss stylus 
+>  loader   
+
+css-loader 负责解析 @import 这种语法的      
+style-loader 负责把 css 插入到head 的标签中   
+loader 的特点 希望单一   
+loader 的用法 字符串只用一个 loader   
+多个loader 需要 []   
+loader 的顺序 默认是从左向右执行 自下而上   
+loader 还可以写成  对象的方式   (可以多放点东西，options)   
+处理less 文件  sass scss stylus    
 
 解析less 文件
 yarn add  less@3.9.0 less-loader@4.1.0 -D
 
-[2021-8-18 - 2021-8-19 ] 结束
+> [2021-8-18 - 2021-8-19 ] 结束 凌晨一点半
 
