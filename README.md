@@ -328,7 +328,7 @@ module.exports = {
 ```
 
 
-然后运行npm run build 会发现浏览器 前缀并没有生效 
+然后运行npm run build 会发现浏览器 前缀并没有生效    
 TODO: （放无生效截图）
 
 加浏览器前缀没生效的解决办法
@@ -346,10 +346,10 @@ TODO: （放无生效截图）
                 "last 3 iOS versions"
             ]
         })
-```
+```   
 TODO: （放生效截图） 
 
-当然，也百度了另外两种办法 ，但都存在报错
+当然，也百度了另外两种办法 ，但都存在报错   
 
 2. package.json
 ```
@@ -376,7 +376,7 @@ yarn add optimize-css-assets-webpack-plugin -D
 
 yarn add uglifyjs-webpack-plugin -D
 
-现在这个npm 包里都已经没有看到这两个东西了呀
+现在这个npm 包里都已经没有看到这两个东西了呀   
 https://www.npmjs.com/package/mini-css-extract-plugin
 
 .....下次
