@@ -1,5 +1,5 @@
-/* @import './a.css'; */
-/* body {
+@import './a.css';
+body {
     background-color: aqua;
-    
-} */
+    transition: rotate(45deg);
+}

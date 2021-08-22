@@ -1,3 +1,4 @@
+
 # webpack-test
 webpack 项目demo 练习上手
 
@@ -259,3 +260,123 @@ yarn add  less@3.9.0 less-loader@4.1.0 -D
 
 > [2021-8-18 - 2021-8-19 ] 结束 凌晨一点半
 
+>.... [2021-8-22] ................................................................
+
+抽离样式
+
+mini-css-extract-plugin   抽离 css 插件
+
+yarn add mini-css-extract-plugin@0.5.0 -D   
+插件都是类
+
+`let MiniCssExtractPlugin = require('mini-css-extract-plugin')`
+
+引用less文件报的错  后面再看
+``` 
+ERROR in ./src/index.less 1:4
+Module parse failed: Unexpected token (1:4)
+You may need an appropriate loader to handle this file type.
+> body{
+|      border-color: rebeccapurple;
+| }
+ @ ./src/index.js 9:0-23
+ @ multi (webpack)-dev-server/client?http://localhost:8080 ./src/index.js
+```
+
+将css 方面的代码打包到一个文件中   
+使用 方式
+```
+ new MiniCssExtractPlugin({
+            filename: 'main.css'
+
+        })
+
+//  modules
+  use:[
+                   MiniCssExtractPlugin.loader,
+                    'css-loader',
+                ]
+```
+
+autoprefixer  自动添加浏览器前缀
+postcss-loader  需要loader   
+命令` yarn add postcss-loader@3.0.0 autoprefixer@9.4.3  -D `
+
+直接npm run dev 会报错  
+`Error: No PostCSS Config `     
+![procss-loader](后期放入照片)  
+
+在根目录新建 postcss.config.js 文件
+
+引入模块
+```
+module.exports = {
+    plugins:[require('autoprefixer')]
+}
+
+// webpack.config.js  添加
+
+ use:[
+                   MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    // '',
+                    {
+                        loader:"postcss-loader"
+                    }
+                ]
+
+```
+
+
+然后运行npm run build 会发现浏览器 前缀并没有生效 
+TODO: （放无生效截图）
+
+加浏览器前缀没生效的解决办法
+
+1. 在postcss.config.js  rqquire后添加如下代码 支持识别浏览器
+
+```
+ ({
+            "browsers": [
+                "defaults",
+                "not ie < 11",
+                "last 2 versions",
+                "> 1%",
+                "iOS 7",
+                "last 3 iOS versions"
+            ]
+        })
+```
+TODO: （放生效截图） 
+
+当然，也百度了另外两种办法 ，但都存在报错
+
+2. package.json
+```
+ // "browserslist":[
+  //   "last 1 version",
+  //   "> 1%",
+  //   "maintained node versions",
+  //   "not dead"
+  // ]
+```
+
+3. 新建文件夹   .browserslistrc
+
+```
+last 1 version
+> 1%
+maintained node version
+not dead
+```
+
+TODO:   这两个报错以后再找原因吧
+
+yarn add optimize-css-assets-webpack-plugin -D
+
+yarn add uglifyjs-webpack-plugin -D
+
+现在这个npm 包里都已经没有看到这两个东西了呀
+https://www.npmjs.com/package/mini-css-extract-plugin
+
+.....下次
