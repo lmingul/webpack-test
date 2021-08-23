@@ -92,28 +92,22 @@
  * @Author: lmingul
  * @Date: 2021-08-16 00:45:13
  * @LastEditors: lmingul
- * @LastEditTime: 2021-08-22 22:33:31
+ * @LastEditTime: 2021-08-23 23:36:07
  * @Description: 
  * @FilePath: \project-test\webpack-test\webpack-test\src\index.js
  */
 // console.log('hello lmllml')
 
-let str = __webpack_require__(1)
+// let str = require('./a.js')
 
-console.log(str)
+// console.log(str)
 
-__webpack_require__(2)
+__webpack_require__(1)
 
 // require('./index.less')
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-console.log('webpack-devffff')
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin

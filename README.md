@@ -376,7 +376,88 @@ yarn add optimize-css-assets-webpack-plugin -D
 
 yarn add uglifyjs-webpack-plugin -D
 
-现在这个npm 包里都已经没有看到这两个东西了呀   
-https://www.npmjs.com/package/mini-css-extract-plugin
+现在ps://www.npmjs.com/package/mini-css-extract-plugin   
+
+虽然没有了，但是我也可以试一试 ，看看是干啥的
+
+这里可以查看安装包的版本（可以选低一点的版本安装，保证兼容）   
+https://www.npmjs.com/package/uglifyjs-webpack-plugin   
+https://www.npmjs.com/package/optimize-css-assets-webpack-plugin
+
+
 
 .....下次
+
+> 2021-8-23
+
+
+虽然没有了，但是我也可以试一试 ，看看是干啥的   
+yarn add optimize-css-assets-webpack-plugin@5.0.4 -D   
+yarn add uglifyjs-webpack-plugin@2.2.0 -D
+
+```
+// webpack.config.js
+ mode:"production",  // 这里要注意使用模式为 'production'
+ optimization:{       // 优化项
+        minimizer:[
+             new OptimizeCss()
+        ]
+    },
+```
+
+直接帮我们压缩 css 代码的  main.css 
+```html
+body{background-color:brown}div{color:coral}body{background-color:#0ff;-webkit-transition:rotate(45deg);transition:rotate(45deg)}
+```
+但是我们的js 代码会变回原来的样子，不再被压缩  
+
+但是我使用 uglifyjs-webpack-plugin 并没有帮我压缩代码 ？
+
+先不管
+
+####  转化es6 语法
+
+
+> 安装Babel
+>> babel-loader  转换下载器 
+>> babel/core    babel 的核心模块  调用transform 方法转化我们的代码
+>> babel/preset-env    把高级的语法转化为低级的语法
+
+
+找了个支持版本
+https://blog.csdn.net/u012443286/article/de   
+
+yarn add babel-loader@7.1.4 @babel/core@6.26.0 @babel/preset-env@1.6.1 -D
+
+还是跟着视频作者的版本来，不然后面又会因为版本报错
+
+babel-loader@8.0.4 
+@babel/core@7.2.2
+@babel/preset-env@7.2.3
+
+OK
+运行 npx webpack
+
+```JavaScript
+let fn = () => {
+    console.log('///////////')
+}
+
+fn()
+
+// 转换后
+var fn = function fn() 
+
+// 直接写这种代码打包会报错
+class A{
+    a = 1
+}
+
+````
+
+安装 @babel/plugin-proposal-class-properties  // 安装类的属性  @7.2.3
+
+安装 @babel/plugin-proposal-decorators  // 安装类的属性  @7.2.3
+
+
+> 结束 太晚了

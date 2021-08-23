@@ -81,42 +81,42 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/******/ ({
 
-/*
- * @Author: lmingul
- * @Date: 2021-08-16 00:45:13
- * @LastEditors: lmingul
- * @LastEditTime: 2021-08-22 22:33:31
- * @Description: 
- * @FilePath: \project-test\webpack-test\webpack-test\src\index.js
- */
-// console.log('hello lmllml')
-
-let str = __webpack_require__(1)
-
-console.log(str)
-
-__webpack_require__(2)
-
-// require('./index.less')
-
-/***/ }),
-/* 1 */
+/***/ "./src/a.js":
+/*!******************!*\
+  !*** ./src/a.js ***!
+  \******************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('webpack-devffff')
+eval("console.log('webpack-devffff');\n\n//# sourceURL=webpack:///./src/a.js?");
 
 /***/ }),
-/* 2 */
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/index.css?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/*\r\n * @Author: lmingul\r\n * @Date: 2021-08-16 00:45:13\r\n * @LastEditors: lmingul\r\n * @LastEditTime: 2021-08-24 00:43:52\r\n * @Description: \r\n * @FilePath: \\project-test\\webpack-test\\webpack-test\\src\\index.js\r\n */\n// console.log('hello lmllml')\nvar str = __webpack_require__(/*! ./a.js */ \"./src/a.js\");\n\nconsole.log(str + '1');\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\"); // require('./index.less')\n\n\nvar fn = function fn() {\n  console.log('///////////');\n};\n\nfn();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
