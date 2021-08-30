@@ -460,4 +460,5 @@ class A{
 安装 @babel/plugin-proposal-decorators  // 安装类的属性  @7.2.3
 
 
-> 结束 太晚了
+> 结束 
+

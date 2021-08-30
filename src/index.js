@@ -2,7 +2,7 @@
  * @Author: lmingul
  * @Date: 2021-08-16 00:45:13
  * @LastEditors: lmingul
- * @LastEditTime: 2021-08-24 01:10:53
+ * @LastEditTime: 2021-08-30 00:38:18
  * @Description: 
  * @FilePath: \project-test\webpack-test\webpack-test\src\index.js
  */
@@ -22,14 +22,14 @@ let fn = () => {
 
 fn()
 
-@log  
+// @log  
 
-class A{
-    a = 1
-}
+// // class A{
+// //     a = 1
+// // }
 
 
-let a = new A()
+// let a = new A()
 
 console.log(a.a,'打印a')
 
